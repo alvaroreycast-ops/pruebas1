@@ -113,25 +113,4 @@ def devolver_libro(titulo):
                 return "Libro ya disponible"
 
 
-def mostrar_libros():
-    contador = 0
-    if len(bd) == 0:
-        _cosa("No hay libros", "", 2)
-    else:
-        while contador < len(bd):
-            x = bd[contador]
-            estado = ""
-            if x["disponible"] == True:
-                estado = estado + "Disponible"
-            else:
-                if x["disponible"] == False:
-                    estado = estado + "Prestado"
-            salida = ""
-            partes = [x["titulo"], x["autor"], estado]
-            for p in partes:
-                if salida == "":
-                    salida = p
-                else:
-                    salida = salida + " - " + p
-            print(salida)
-            contador = contador + 1
+
